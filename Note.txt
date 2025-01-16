@@ -10,7 +10,7 @@ npm install express
 
  Semantic Versioning (semVer)
 
-1.0.0
+  1.0.0
 1.0.1
 1.0.8
 1.0.9
@@ -33,6 +33,17 @@ npm install express
 
  nodemon 
  npm i -g nodemon
+
+ 1.  nodemon ma "start" : "nodemon app.js" yesari rakheko xa vane
+     npm start garda hunxa
+     tara start ko thau ma aru kunai xa vane npm run ..... (compulsory hunxa) 
+
+ 2. yo nodemon binai node --watch app.js garda pani hunxa
+
+ Note : yo 2 ota option ma junai use garda ni hunxa     
+
+
+
 
  For post request 
  body>raw>json

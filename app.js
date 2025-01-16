@@ -1,9 +1,16 @@
 const express = require("express");
 const app = express();
+const ConnectToDatabase = require("./database/index");
+
+// const app = require("express")(); alternative way to import express
+
+ConnectToDatabase();
 
 app.get("/", (req, res) => {
-  console.log(req);
-  res.send("Hello World");
+  res.status(200).json({
+    message: "Hello World",
+    name: "John Doe",
+  });
 });
 
 app.listen(3000, () => {
