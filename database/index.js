@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
 const ConnectionString =
-  "mongodb+srv://bishal:123@cluster0.kj5af.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
+  "mongodb+srv://bishal:3CE2kTFY0WtbOMeL@mern.kj5af.mongodb.net/?retryWrites=true&w=majority&appName=MERN";
 
 async function ConnectToDatabase() {
   await mongoose.connect(ConnectionString);

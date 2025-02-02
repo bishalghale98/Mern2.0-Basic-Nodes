@@ -48,3 +48,9 @@ npm install express
  For post request 
  body>raw>json
  app.use(express.urlencoded({extended : true}))
+
+
+ CRUD (Create Read Update Delete)
+ 1. Create : Post api
+ 2. Read : Get data 
+    * Read 1 book : book id will come on req.params.id

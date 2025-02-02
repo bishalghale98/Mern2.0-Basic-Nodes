@@ -40,10 +40,10 @@ app.post("/book", async (req, res) => {
   });
 });
 
-// for read books
+// for read all books
 
 app.get("/book", async (req, res) => {
-  const books = await Book.find();
+  const books = await Book.find(); //return in array
   res.status(200).json({
     message: "All books",
     data: books,
@@ -55,7 +55,7 @@ app.get("/book", async (req, res) => {
 app.get("/book/:id", async (req, res) => {
   try {
     const id = req.params.id;
-    const book = await Book.findById(id);
+    const book = await Book.findById(id); //return in object
     if (!book) {
       res.status(404).json({
         message: "Book not found",
@@ -72,6 +72,21 @@ app.get("/book/:id", async (req, res) => {
     });
   }
 });
+
+// for Delete book by id
+
+app.delete("/book/:id", async (req, res) => {
+  const id = req.params.id;
+  await Book.findByIdAndDelete(id);
+  res.status(200).json({
+    message: "Book deleted successfully",
+  });
+});
+
+// for update book by id
+
+
+
 
 app.listen(3000, () => {
   console.log("Server is running on port 3000");
