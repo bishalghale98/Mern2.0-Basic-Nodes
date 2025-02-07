@@ -1,7 +1,12 @@
 const express = require("express");
 const app = express();
+
 const ConnectToDatabase = require("./database/index");
 const Book = require("./models/bookModel");
+
+// multerConfig imports
+const { multer, storage } = require("./middleware/multerConfig");
+const upload = multer({ storage: storage });
 
 // const app = require("express")(); alternative way to import express
 
@@ -18,7 +23,7 @@ app.get("/", (req, res) => {
 
 // for create books
 
-app.post("/book", async (req, res) => {
+app.post("/book", upload.single("image"), async (req, res) => {
   const {
     bookName,
     bookPrice,
@@ -84,9 +89,6 @@ app.delete("/book/:id", async (req, res) => {
 });
 
 // for update book by id
-
-
-
 
 app.listen(3000, () => {
   console.log("Server is running on port 3000");
